@@ -257,6 +257,7 @@
       clickable: true,
     },
   });
+
   /**
    * Initiate Pure Counter
    */
