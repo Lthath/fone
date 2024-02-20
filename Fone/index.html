@@ -36,14 +36,22 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- =======================================================
-  * Template Name: KnightOne
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/knight-simple-one-page-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
+  * EmailJs Implementation Lthat
   ======================================================== -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "-pd2iYhNqfDSLZLzB",
+        });
+      })();
+    </script>
   </head>
 
   <body>
@@ -65,9 +73,7 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
               <ul>
                 <li>
-                  <a class="nav-link scrollto active" href="#accueil"
-                    >Accueil</a
-                  >
+                  <a class="nav-link scrollto active" href="#">Accueil</a>
                 </li>
                 <li>
                   <a class="nav-link scrollto" href="#apropos">À propos</a>
@@ -364,7 +370,7 @@
                   type="text"
                   name="name"
                   class="form-control"
-                  id="name"
+                  id="name_id"
                   placeholder="Nom"
                   data-rule="minlen:4"
                   title="Veuillez saisir au moins 4 caractères"
@@ -377,7 +383,7 @@
                   type="email"
                   class="form-control"
                   name="email"
-                  id="email"
+                  id="email_id"
                   placeholder="E-mail"
                   data-rule="email"
                   title="Veuillez saisir une adresse e-mail valide"
@@ -390,7 +396,7 @@
                   type="tel"
                   class="form-control"
                   name="téléphone"
-                  id="téléphone"
+                  id="phone_id"
                   placeholder="Téléphone"
                   required
                   title="Veuillez saisir votre numéro de téléphone"
@@ -404,7 +410,7 @@
                   type="date"
                   name="date"
                   class="form-control datepicker"
-                  id="date"
+                  id="date_id"
                   placeholder="Date de location souhaitée"
                   data-rule="minlen:4"
                   title="Veuillez choisir une date de location souhaitée"
@@ -415,7 +421,7 @@
               <div class="col-md-4 form-group mt-3">
                 <input
                   type="number"
-                  id="jours"
+                  id="jour_id"
                   name="jours"
                   placeholder="Nombre de jours"
                   class="form-control"
@@ -427,7 +433,7 @@
               <div class="col-md-4 form-group mt-3">
                 <select
                   name="voiture"
-                  id="voitures"
+                  id="voiture_id"
                   class="form-select"
                   required
                   title="Veuillez sélectionner une voiture"
@@ -444,6 +450,7 @@
               <textarea
                 class="form-control"
                 name="message"
+                id="message_id"
                 rows="5"
                 placeholder="Message (Facultatif)"
               ></textarea>
@@ -457,7 +464,27 @@
               </div>
             </div>
             <div class="text-center">
-              <button type="submit">Envoyer</button>
+              <button onclick="sendMail()" type="submit">Envoyer</button>
+              <div
+                id="successMessage"
+                style="
+                  display: none;
+                  color: green;
+                  margin-top: 25px;
+                  font-size: 20px;
+                  font-weight: 600;
+                "
+              ></div>
+              <div
+                id="errorMessage"
+                style="
+                  display: none;
+                  color: red;
+                  margin-top: 25px;
+                  font-size: 20px;
+                  font-weight: 600;
+                "
+              ></div>
             </div>
           </form>
         </div>
@@ -475,10 +502,30 @@
               Êtes-vous un fournisseur de voitures de qualité ? Contactez-nous
               pour devenir l'un de nos partenaires de location privilégiés.
             </p>
-            <a id="contact-link" class="cta-btn" href="#contact">Contactez</a>
+            <a id="contact-link" class="cta-btn" style="cursor: pointer"
+              >Contactez</a
+            >
+          </div>
+        </div>
+        <div
+          class="container"
+          id="social-icons-container"
+          style="text-align: center; margin-top: 30px; display: none"
+        >
+          <div id="social-icons" class="social-icons">
+            <a href="https://www.tiktok.com/@fonecars75"
+              ><span class="bi bi-tiktok"></span
+            ></a>
+            <a href="https://www.snapchat.com/add/fonecars75"
+              ><span class="bi bi-snapchat"></span
+            ></a>
+            <a href="https://www.instagram.com/f.onecars75/"
+              ><span class="bi bi-instagram"></span
+            ></a>
           </div>
         </div>
       </section>
+
       <!-- End Cta Section -->
     </main>
     <!-- End #main -->
@@ -522,7 +569,6 @@
                 <ul class="list-unstyled">
                   <li>Lundi-Dimanche</li>
                   <li>8h - 20h</li>
-                  <li>Contactez-nous</li>
                 </ul>
               </div>
               <div class="col-md-4 mb-4 mb-md-0">
@@ -582,6 +628,13 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <!--Template animation perso-->
-    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <!--Template e-mail js-->
+    <script src="assets/js/mail.js"></script>
+    <!-- AOS animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

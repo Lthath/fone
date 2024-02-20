@@ -1676,3 +1676,111 @@ ul.list-unstyled li .bi {
 .blue {
   color: #0b60b3 !important; /* Change la couleur de l'icône en bleu */
 }
+
+/* Animation au clique Contactez de Fournisseur*/
+
+/* CSS pour l'animation des icônes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.social-icons {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0; /* Assurez-vous que les icônes sont initialement cachées */
+}
+
+/* Ajoutez cette classe lorsque vous souhaitez afficher les icônes */
+.animate-icons {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 1;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  position: relative;
+  text-align: center;
+  transition: 0.3s background ease;
+  color: #0d1e2d;
+  line-height: 0;
+}
+
+.social-icons a span {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.social-icons a:hover {
+  color: #fff;
+  background: #0b60b3;
+}
+
+.social-icons a i {
+  line-height: 0;
+}
+
+/* CGV page */
+
+.cgvnav {
+  background-color: rgb(38, 36, 36);
+}
+
+.cgvfooter {
+  background-color: black;
+}
+
+.cgvfooter {
+  padding: 5rem 0 2.5rem 0;
+}
+
+.cgvfooter p {
+  font-weight: 400;
+  color: white;
+}
+.cgvfooter h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: 600;
+}
+
+.cgvfooter ul li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.cgvfooter a {
+  color: white;
+  font-weight: 400;
+}
+
+.cgvfooter .copyright {
+  margin-bottom: 0px;
+}
+
+.cgvfooter .copyright,
+.cgvfooter .credits {
+  font-size: 14px;
+}
+
+.cgvsocial a span {
+  color: black;
+}
+
+.cgvcomponent {
+  justify-content: center ;
+}
